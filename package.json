@@ -1,0 +1,25 @@
+{
+  "name": "nodeqainterview",
+  "version": "1.0.0",
+  "description": "The basis of a technical interview for a node QA engineer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianStanger/nodeQAInterview.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "qa",
+    "interview"
+  ],
+  "author": "damian stanger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamianStanger/nodeQAInterview/issues"
+  },
+  "homepage": "https://github.com/DamianStanger/nodeQAInterview#readme"
+}
