@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "uprn": 10001,
+      "name": "The shard",
+      "aliases:": ["The shard of glass"],
+      "address": {
+        "line1": "32",
+        "line2": "London bridge street",
+        "city": "London",
+        "postcode": "SE1 9SG"
+      }
+    },
+    {
+      "uprn": 123456,
+      "address": {
+        "line1": "110 High Holborn",
+        "line2": "Holborn",
+        "city": "London",
+        "postcode": "WC1V 6EU"
+      }
+    }
+  ]
+}

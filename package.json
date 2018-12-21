@@ -2,9 +2,11 @@
   "name": "nodeqainterview",
   "version": "1.0.0",
   "description": "The basis of a technical interview for a node QA engineer",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "mocha -u bdd --recursive",
+    "eslint": "node_modules/eslint/bin/eslint.js src/**/*.js test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/DamianStanger/nodeQAInterview/issues"
   },
-  "homepage": "https://github.com/DamianStanger/nodeQAInterview#readme"
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.10.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.10"
+  }
 }
