@@ -49,7 +49,7 @@ The following requirements have been recently added and are not tested
    * Install the npm packages (This is just to see if they know how, they will get a msg saying nothing changed)
    * Put environment variables in place
    * Have a look at the input file 
-   * Run it ```npm run```
+   * Run it ```npm start```
    * Have a look at the output in mongo 
    * Run tests ```npm test```
    * Review the tests

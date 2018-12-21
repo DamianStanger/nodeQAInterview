@@ -5,7 +5,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 async function saveRecords(mongoUrl) {
   const dbName = mongoUrl.split("/")[3];
-  console.log(mongoUrl, dbName);
+  console.log("Using", mongoUrl, dbName);
   const mongoClient = new MongoClient(mongoUrl, {"useNewUrlParser": true});
   await mongoClient.connect();
   const db = mongoClient.db(dbName);
@@ -21,7 +21,6 @@ async function saveRecords(mongoUrl) {
         {"upsert": true}
       );
     }
-    console.log("here");
   };
 }
 
