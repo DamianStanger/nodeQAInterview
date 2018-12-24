@@ -29,7 +29,7 @@ The code base has the following requirements fully implemented and tested:
  
 ## New requirements
 The following requirements have been recently added and are not tested
- * Some of our customers dont want their buildings in the DB, if the postcode has M1 as the major part then we will exclude these buildings
+ * Some of our customers dont want their buildings in the DB, if the postcode has M4 as the major part then we will exclude these buildings
  
 ## The aim of all this
  * Can they use git?
@@ -67,13 +67,17 @@ The following requirements have been recently added and are not tested
  * If the file is not valid json it will fail
  * if the DB does not exist or the server is down it will fail
  * If there is a missing field in the addresses the computed fullAddress will be wrong
- * A very large number in the UPRN will cause failure
+ * If the address object is not there the code will explode
+ * A very large number in the UPRN will cause a buffer overflow causing the UPRN and _id to be saved incorrectly in the DB
  * The UPRN will allow negative numbers but should not
  * Duplicate UPRNs in the import file will lead to data getting overwritten
  * If the UPRN is not there it will insert a record with an _id of null
  * Unexpected use of syncronous file reading (do they know the difference?)
  * The test for the imported data does not assert a value, just the presence of the field
    * And actually the functionality is broken (code should be "mongoDoc.importedDate = new Date();")
+ * The code that filters out buildings will:
+   * Fail if there is no address
+   * Filter out postcodes such as "AM4 123" or "AB1 MM4" it should only filter out postcodes such as "M4 AA1"
 
 I would not expect the candidate to find everything in the 20-30 minutes that this test is supposed to take, and obviously the issues 
 I expect them to find would depend on their experience. Its not really important what they do and dont find, its more about looking

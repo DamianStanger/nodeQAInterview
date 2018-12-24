@@ -19,6 +19,15 @@
         "city": "London",
         "postcode": "WC1V 6EU"
       }
+    },
+    {
+      "uprn": 777,
+      "name": "Swan Building",
+      "address": {
+        "line1": "20 Swan Street",
+        "city": "Manchester",
+        "postcode": "M4 5JW"
+      }
     }
   ]
 }
