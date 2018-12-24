@@ -23,9 +23,9 @@ the things that this does. Esp happy path tests.
 ## Implemented requirements
 The code base has the following requirements fully implemented and tested:
  * Take a file containing 'buildings' and save them to a mongo collection called buildings
- * the _id in the mongo document should take the uprn
+ * The _id in the mongo document should take the uprn of the building
  * Each imported document should have an imported date
- * Create a field called 'fullAddress' that is the concatenation of lines 1, 2, town and postcode
+ * Create a field called 'fullAddress' that is the concatenation of name, line 1, line 2, city and postcode
  
 ## New requirements
 The following requirements have been recently added and are not tested
@@ -44,14 +44,14 @@ The following requirements have been recently added and are not tested
  * (prep) install all the packages
  * Ask candidate to:
    * Review the readme which is a modified version of this document, it tells them about the project and what it does
-   * Create a branch based on the dev branch (This is where they will work)
-   * Switch to the new branch  
+   * Create a branch based on the dev branch (This is where they will work) - can they use git?
+   * Switch to the new branch
    * Install the npm packages (This is just to see if they know how, they will get a msg saying nothing changed)
-   * Put environment variables in place
+   * Put environment variables in place (its possible to use defaults but env variables will give more control)
    * Have a look at the input file 
    * Run it ```npm start```
-   * Have a look at the output in mongo 
-   * Run tests ```npm test```
+   * Have a look at the output in mongo (only a couple of documents)
+   * Run tests ```npm test``` (see them all pass)
    * Review the tests
      * Whats missing
      * Whats good, whats bad
@@ -70,7 +70,14 @@ The following requirements have been recently added and are not tested
  * A very large number in the UPRN will cause failure
  * The UPRN will allow negative numbers but should not
  * Duplicate UPRNs in the import file will lead to data getting overwritten
+ * If the UPRN is not there it will insert a record with an _id of null
  * Unexpected use of syncronous file reading (do they know the difference?)
+ * The test for the imported data does not assert a value, just the presence of the field
+   * And actually the functionality is broken (code should be "mongoDoc.importedDate = new Date();")
+
+I would not expect the candidate to find everything in the 20-30 minutes that this test is supposed to take, and obviously the issues 
+I expect them to find would depend on their experience. Its not really important what they do and dont find, its more about looking
+at how they attack the problem and what their thought process is. 
 
 ## Environment
  * This code has been written and tested on linux (ubuntu through the WSL)

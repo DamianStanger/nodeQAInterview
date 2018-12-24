@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const transform = require("./transform");
-const saveRecords = require("./saveRecords");
+const buildingRepo = require("./buildingRepository");
 
 
 async function execute(filename, mongoUrl) {
@@ -11,8 +11,9 @@ async function execute(filename, mongoUrl) {
 
   const mongoDocs = transform(data);
 
-  const save = await saveRecords(mongoUrl);
-  return await save(mongoDocs);
+  const repo = await buildingRepo(mongoUrl);
+  await repo.save(mongoDocs);
+  return await repo.close();
 }
 
 
